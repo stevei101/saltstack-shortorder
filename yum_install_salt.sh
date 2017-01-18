@@ -10,7 +10,8 @@ mkdir -p /srv
 # cd saltstack-shortorder
 cp -Rf srv /
 cp -Rf salt /etc/
-echo "master: $(hostname -i)" >> /etc/salt/minion
+# echo "master: $(hostname -i)" >> /etc/salt/minion
+sed -i '1 i\master: $(hostname -i)' /etc/salt/minion
 systemctl restart salt-master salt-minion
-salt-key -A
-salt '*' state.highstate
+salt-key -A --quiet --yes
+salt '*' test.ping
