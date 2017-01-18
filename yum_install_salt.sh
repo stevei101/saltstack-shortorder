@@ -6,11 +6,11 @@ pip install -U pip
 pip install -r requirements.txt
 firewall-cmd --permanent --add-port=4505-4506/tcp
 mkdir -p /srv
-git clone https://github.com/stevei101/saltstack-shortorder.git
-cd saltstack-shortorder
-cp -Rf srv /srv
-cp -Rf salt /etc/salt
+# git clone https://github.com/stevei101/saltstack-shortorder.git
+# cd saltstack-shortorder
+cp -Rf srv /
+cp -Rf salt /etc/
 echo $(hostname -i) >> /etc/salt/minion
 systemctl restart salt-master salt-minion
-sudo salt-keys -A
+salt-key -A
 salt '*' state.highstate
