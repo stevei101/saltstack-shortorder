@@ -1,0 +1,204 @@
+    1  yum update && yum upgrade -y && yum install -y epel-release vim python-pip gcc libffi-devel python-devel openssl-devel netstat telnet
+    2  yum update && yum upgrade -y && yum install -y git salt-master salt-minion
+    3  sudo systemctl restart salt-master salt-minion
+    4  ip addr
+    5  ping 10.128.0.3
+    6  salt-master
+    7  salt-master --log-level=debug
+    8  netstat -nlut
+    9  yum search netstat
+   10  yum install -y net-tools.x86_64
+   11  netstat -nlut
+   12  salt-keys
+   13  systemctl status salt-master.service
+   14  salt-key -L
+   15  salt-key -A
+   16  salt '*' test.ping
+   17  firewall-cmd
+   18  firewall-cmd --help
+   19  firewall-cmd --state
+   20  firewall-cmd --list-all
+   21  firewall-cmd --permanent --zone=<zone> --add-port=4505-4506/tcp
+   22  firewall-cmd --permanent  --add-port=4505-4506/tcp
+   23  salt '*' test.ping
+   24  firewall-cmd --reload
+   25  vim /etc/salt/minion
+   26  salt-key -L
+   27  sudo systemctl restart salt-minion
+   28  salt-key -L
+   29  salt-key -A
+   30  salt '*' test.ping
+   31  mkdir -p gits
+   32  ls ~/.ssh
+   33  mkdir -p ~/.ssh
+   34  cd .ssh/
+   35  vim id_rsa
+   36  vim id_rsa.pub
+   37  eval $(ssh-agent)
+   38  ssh-add ~/.ssh/id_rsa
+   39  chmod 600 ~/.ssh/id_rsa
+   40  ssh-add ~/.ssh/id_rsa
+   41  cd
+   42  cd gits
+   43  yum install -y GitPython
+   44  vim /etc/salt/master 
+   45  sudo systemctl restart salt-master
+   46  vim /etc/salt/master 
+   47  sudo systemctl restart salt-master
+   48  ls /etc
+   49  ls /etc/salt/
+   50  ls /etc/salt/master 
+   51  ls /srv/
+   52  vim /etc/salt/master
+   53  mkdir -p /srv/salt
+   54  vim /srv/salt/top.sls
+   55  sudo systemctl restart salt-master
+   56  salt '*' state.apply nginx test=True
+   57  vim /etc/salt/master
+   58  sudo systemctl restart salt-master
+   59  salt '*' state.apply nginx test=True
+   60  which GitPython
+   61  which gitpython
+   62  pip install -U pip
+   63  yum update && yum upgrade -y && yum install -y python-pip
+   64  pip install -U pip
+   65  pip install pip install gitpython
+   66  pip install gitpython
+   67  pip install -U gitpython
+   68  pip install "GitPython==2.1.1"
+   69  sudo systemctl restart salt-master
+   70  salt '*' state.apply nginx test=True
+   71  python -v
+   72  ls -alt GitPython==2.1.1
+   73  ls -alt /var/cache/salt/
+   74  ls -alt /var/cache/salt/master/
+   75  ls -alt /var/cache/salt/master/file_lists/
+   76  ls -alt /var/cache/salt/master/file_lists/roots/
+   77  ls -alt /var/cache/salt/master/file_lists/roots/base.p 
+   78  less /var/cache/salt/master/file_lists/roots/base.p 
+   79  !
+   80  salt '*' state.highstate
+   81  vim /etc/salt/master
+   82  sudo systemctl restart salt-master
+   83  salt-master
+   84  sudo systemctl stop salt-master
+   85  salt-master
+   86  salt-master -l debug
+   87  vim /etc/salt/master
+   88  sudo systemctl restart salt-master
+   89  salt '*' state.apply nginx test=True
+   90  salt '*' state.apply jenkins test=True
+   91  systemctl status nginx.service
+   92  systemctl -a
+   93  salt '*' state.apply nginx test=True
+   94  salt '*' state.apply nginx.ng test=True
+   95  salt-key -L
+   96  salt 'centos-7-2.c.zuul-152814.internal' state.apply nginx.ng test=True
+   97  salt 'centos-7-2.c.zuul-152814.internal' test.ping
+   98  pwd
+   99  salt 'centos-7-2.c.zuul-152814.internal' state.apply nginx pillar='{"settings":{"user_auth_enabled":"False"}}' test=True
+  100  ls /srv
+  101  ls /srv/salt/
+  102  mkdir -p /srv/pillar
+  103  vim /srv/pillar/top.sls
+  104  vim /srv/pillar/nginx.sls
+  105  vim /etc/salt/master
+  106  sudo systemctl restart salt-master
+  107  salt 'centos-7-2.c.zuul-152814.internal' state.apply nginx test=True
+  108  salt '*' pillar.get nginx
+  109  salt '*' pillar.items
+  110  vim /srv/pillar/nginx.sls
+  111  salt 'centos-7-2.c.zuul-152814.internal' state.apply nginx test=True
+  112  sudo systemctl restart salt-master
+  113  salt 'centos-7-2.c.zuul-152814.internal' state.apply nginx test=True
+  114  salt 'centos-7-2.c.zuul-152814.internal' state.apply nginx
+  115  vim /srv/pillar/nginx.sls
+  116  sudo systemctl restart salt-master
+  117  salt 'centos-7-2.c.zuul-152814.internal' state.apply nginx salt-call -l debug state.apply
+  118  salt 'centos-7-2.c.zuul-152814.internal' state.apply nginx test=True
+  119  salt 'centos-7-2.c.zuul-152814.internal' state.apply jenkins test=True
+  120  salt 'centos-7-2.c.zuul-152814.internal' state.apply 
+  121  salt 'centos-7-2.c.zuul-152814.internal' state.apply `test=True
+  122  salt 'centos-7-2.c.zuul-152814.internal' state.apply nginx.ng
+  123  salt 'centos-7-2.c.zuul-152814.internal' state.apply jenkins
+  124  vim /etc/salt/master
+  125  sudo systemctl restart salt-master
+  126  ls /srv
+  127  ls /srv/salt
+  128  ls /srv/salt/top.sls 
+  129  vim /srv/salt/top.sls
+  130  ls /srv/pillar/
+  131  salt 'centos-7-2.c.zuul-152814.internal' state.apply sun-java test=True
+  132  salt 'centos-7-2.c.zuul-152814.internal' state.apply sun-java
+  133  salt 'centos-7-2.c.zuul-152814.internal' state.apply jenkins
+  134  ls /srv/pillar/
+  135  /vim /srv/pillar/sun-java.sls
+  136  vim /srv/pillar/sun-java.sls
+  137  vim /srv/pillar/top
+  138  vim /srv/pillar/top.sls 
+  139  sudo systemctl restart salt-master
+  140  salt 'centos-7-2.c.zuul-152814.internal' state.apply sun-java test=True
+  141  salt 'centos-7-2.c.zuul-152814.internal' state.apply sun-java
+  142  salt 'centos-7-2.c.zuul-152814.internal' state.apply jenkins
+  143  salt 'centos-7-2.c.zuul-152814.internal' state.show_highstate jenkins
+  144  vim /srv/pillar/top.sls 
+  145  vim /srv/pillar/jenkins.sls 
+  146  sudo systemctl restart salt-master
+  147  salt 'centos-7-2.c.zuul-152814.internal' state.apply jenkin
+  148  salt 'centos-7-2.c.zuul-152814.internal' state.apply jenkins
+  149  salt 'centos-7-2.c.zuul-152814.internal' state.highstate
+  150  vim /srv/pillar/jenkins.sls 
+  151  vim /srv/pillar/sun-java.sls 
+  152  vim /srv/salt/top.sls 
+  153  ls /srv/salt/
+  154  salt 'centos-7-2.c.zuul-152814.internal' state.highstate
+  155  salt '*' pillar.items
+  156  history 
+  157  salt 'centos-7-2.c.zuul-152814.internal' state.apply jenkins test=True
+  158  ls /srv/pillar/
+  159  vim /srv/pillar/jenkins.sls 
+  160  salt 'centos-7-2.c.zuul-152814.internal' state.apply jenkins
+  161  sudo systemctl restart salt-master
+  162  salt 'centos-7-2.c.zuul-152814.internal' state.apply jenkins
+  163  vim /srv/pillar/jenkins.sls 
+  164  sudo systemctl restart salt-master
+  165  salt 'centos-7-2.c.zuul-152814.internal' state.apply jenkins
+  166  vim /srv/pillar/jenkins.sls 
+  167  gcloud
+  168  gcloud auth login
+  169  gcloud compute --project "zuul-152814" ssh --zone "us-central1-c" "centos-7-1"
+  170  gcloud config set project "zuul-152814"
+  171  gcloud config list
+  172  gcloud compute instances describe centos-7-1
+  173  updatedb
+  174  yum update && yum upgrade && yum install -y mlocate
+  175  updatedb
+  176  locate .pem
+  177  ls ~/.ssh/
+  178  gcloud components update
+  179  gcloud components install gsutil
+  180  yum install -y certbot
+  181  yum search webroot
+  182  certbot certonly
+  183  ls -alt /svr/
+  184  ls -alt /srv/
+  185  ls -alt ~/.ssh/
+  186  eval $(ssh-agent)
+  187  ssh-add ~/.ssh/id_rsa
+  188  git config --global user.name "Steven Irvin"
+  189   git config --global user.email "steven.irvin@gmail.com"
+  190  pwd
+  191  mkdir -p gits
+  192  cd gits
+  193  git clone git@github.com:stevei101/saltstack-shortorder.git
+  194  ls
+  195  cd saltstack-shortorder/
+  196  git status
+  197  ls
+  198  cp -Rf /etc/salt .
+  199  cp -Rf /srv .
+  200  ls
+  201  git status
+  202  history 
+  203  vim requirements.txt
+  204  history >> .history
