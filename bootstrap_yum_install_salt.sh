@@ -10,6 +10,5 @@ git clone https://github.com/stevei101/saltstack-shortorder.git
 cd saltstack-shortorder
 cp -Rf srv /
 cp -Rf salt /etc/
-echo "master: $(hostname -i)" >> /etc/salt/minion
 systemctl restart salt-minion
 
